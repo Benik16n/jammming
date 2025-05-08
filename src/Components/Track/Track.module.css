@@ -1,0 +1,43 @@
+.mainText {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.subText {
+  color: #b0b0b0;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.addStyle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #181818;
+  background-color: #a66cff;
+}
+.removeStyle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #181818;
+  background-color: #ff4d6d;
+}
+.trackLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 0.75rem 0;
+  border-radius: 12px;
+  background-color: #2a2a3a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+.trackLayout:hover {
+  background-color: #3a3a4a;
+}
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+}

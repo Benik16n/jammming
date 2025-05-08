@@ -1,0 +1,23 @@
+.playlistList {
+  background-color: #1f1f2b;
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid #2e2e3f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  min-height: 400px;
+}
+
+.playlistList h2 {
+  text-align: center;
+  color: #e5e5e5;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.playlistContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}

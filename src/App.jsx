@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import Tracklist from "./Components/Tracklist/Tracklist";
+import Playlist from "./Components/Playlist/Playlist";
+import PlaylistList from "./Components/PlaylistList/PlaylistList";
+import SearchBar from "./Components/SearchBar/SearchBar";
+import "./App.css";
+import fetchGetSongs from "./utilities/request";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState("");
+  const [songs, setSongs] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
+  const [isPlaylistLoaded, setIsPlaylistLoaded] = useState(true);
+  const [playlistList, setPlaylistList] = useState([]);
+
+  const loadCreatePlaylist = () => {
+    setIsPlaylistLoaded(true);
+  };
+
+  const loadSavedPlaylists = () => {
+    setIsPlaylistLoaded(false);
+  };
+
+  useEffect(() => {
+    if (!search) return;
+    const fetchResult = async () => {
+      try {
+        const result = await fetchGetSongs(search);
+        setSongs(result.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchResult();
+  }, [search]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      <header>
+        <h1 className="header">Jammming</h1>
+        <SearchBar search={search} setSearch={setSearch} />
+      </header>
 
-export default App
+      <section className="controls">
+        <button className="button" onClick={loadCreatePlaylist}>
+          Create Playlist
+        </button>
+        <button className="button" onClick={loadSavedPlaylists}>
+          Saved Playlists
+        </button>
+      </section>
+
+      <main className="layout">
+        <Tracklist
+          setSongs={setSongs}
+          setPlaylist={setPlaylist}
+          songs={songs}
+        />
+        {isPlaylistLoaded ? (
+          <Playlist
+            setSongs={setSongs}
+            setPlaylist={setPlaylist}
+            playlist={playlist}
+            setPlaylistList={setPlaylistList}
+          />
+        ) : (
+          <PlaylistList playlistList={playlistList} />
+        )}
+      </main>
+    </div>
+  );
+}
+export default App;

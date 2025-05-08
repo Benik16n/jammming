@@ -1,42 +1,62 @@
-#root {
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #181818;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #70a1ff;
+  text-shadow: 0 0 8px rgba(112, 161, 255, 0.4);
   text-align: center;
+  margin-top: 1rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid #70a1ff;
+  color: #70a1ff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #70a1ff;
+  color: #181818;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
