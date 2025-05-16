@@ -1,23 +1,40 @@
 .playlistList {
-  background-color: #1f1f2b;
-  border-radius: 15px;
-  padding: 1.5rem;
-  border: 1px solid #2e2e3f;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  min-height: 400px;
+  background-color: #1e1e1e;
+  border: 1px solid #70a1ff;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .playlistList h2 {
+  color: #70a1ff;
+  font-size: 1.8rem;
+  text-shadow: 0 0 8px rgba(112, 161, 255, 0.4);
   text-align: center;
-  color: #e5e5e5;
-  font-family: "Poppins";
-  font-weight: 600;
-  font-size: 2rem;
+  margin: 0;
 }
 
 .playlistContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 15px;
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .playlistList {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .playlistList h2 {
+    font-size: 1.5rem;
+  }
+
+  .playlistContainer {
+    gap: 10px;
+  }
 }
