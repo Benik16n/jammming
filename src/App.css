@@ -28,12 +28,7 @@ body {
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -55,8 +50,27 @@ body {
   color: #181818;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ✅ Responsive layout tweaks */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
   }
 }

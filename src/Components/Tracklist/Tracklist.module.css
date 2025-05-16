@@ -1,12 +1,28 @@
-.trackList {
+.mainStyle {
+  background-color: #1e1e1e;
+  border: 1px solid #70a1ff;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+.title {
+  color: #70a1ff;
+  text-shadow: 0 0 4px rgba(112, 161, 255, 0.3);
+  font-size: 1.5rem;
 }
 
 /* ✅ Mobile adjustments */
 @media (max-width: 768px) {
-  .trackList {
-    padding: 0 10px;
+  .mainStyle {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
   }
 }
