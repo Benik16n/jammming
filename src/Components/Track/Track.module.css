@@ -1,43 +1,72 @@
-.mainText {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.8rem;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
-}
-.subText {
-  color: #b0b0b0;
-  font-weight: 400;
-  font-size: 1.4rem;
-}
-.addStyle {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  color: #181818;
-  background-color: #a66cff;
-}
-.removeStyle {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  color: #181818;
-  background-color: #ff4d6d;
-}
 .trackLayout {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  margin: 0.75rem 0;
-  border-radius: 12px;
-  background-color: #2a2a3a;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s ease;
+  background-color: #1e1e1e;
+  border: 1px solid #70a1ff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(112, 161, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .trackLayout:hover {
-  background-color: #3a3a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112, 161, 255, 0.2);
 }
+
 .trackInfo {
   display: flex;
   flex-direction: column;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.mainText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #70a1ff;
+  margin-bottom: 4px;
+}
+
+.subText {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.addStyle,
+.removeStyle {
+  background-color: transparent;
+  border: 1px solid #70a1ff;
+  color: #70a1ff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 36px;
+  text-align: center;
+}
+
+.addStyle:hover,
+.removeStyle:hover {
+  background-color: #70a1ff;
+  color: #1e1e1e;
+}
+
+/* ✅ Mobile responsive layout */
+@media (max-width: 768px) {
+  .trackLayout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .addStyle,
+  .removeStyle {
+    align-self: flex-end;
+  }
 }
