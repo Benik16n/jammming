@@ -17,6 +17,7 @@ const Track = ({ song, onAdd, onRemove }) => {
           -
         </button>
       )}
+      <audio src={song.preview} controls className={styles.audioPlayer} />
     </div>
   );
 };

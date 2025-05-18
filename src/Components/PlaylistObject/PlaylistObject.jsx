@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Track from "../Track/Track";
 import styles from "./PlaylistObject.module.css";
+import PlayButton from "../PlayButton/PlayButton";
 const PlaylistObject = ({ savedPlaylist }) => {
   const [isShowingTracks, setIsShowingTracks] = useState(false);
 
@@ -30,6 +31,7 @@ const PlaylistObject = ({ savedPlaylist }) => {
           </button>
         </>
       )}
+      <PlayButton songsToPlay={savedPlaylist} />
     </div>
   );
 };
